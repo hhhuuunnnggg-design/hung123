@@ -9,10 +9,10 @@ import java.util.Scanner;
 
 public class Chitietphieunhap {
 public static class chitiet9 {
-    private static int machitietphieunhap;
+    private int machitietphieunhap;
     private int masanpham;
-    private static int soluong;
-    private static float dongia;
+    private int soluong;
+    private float dongia;
     private float thanhtien; // tạo cho có để đầy bảng, chứ bên trong tự tính toán rồi
 
     public chitiet9() {
@@ -52,7 +52,7 @@ public static class chitiet9 {
         System.out.println("Mã chi tiết phiếu nhập: " + machitietphieunhap);
     }
 
-    public static int getMachitietphieunhap() {
+    public int getMachitietphieunhap() {
         return machitietphieunhap;
     }
 
@@ -84,9 +84,8 @@ public static class chitiet9 {
         this.dongia = dongia;
     }
 
-    public static float getThanhtien() {
+    public float getThanhtien() {
         return soluong * dongia;
     }
 }
-
 }

@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-
+import doan.DANHSACH9;
 import doan_oop.Chitietphieunhap.chitiet9;
 
 
@@ -44,7 +44,6 @@ public static class DANHSACH9 {
             System.out.println("Danh sách đã đầy");
         }
     }
-
 
     
     
