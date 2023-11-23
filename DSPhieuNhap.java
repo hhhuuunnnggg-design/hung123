@@ -88,7 +88,7 @@ public class DSPhieuNhap {
 
         public static void xuatds() {
             for (int i = 0; i < n; i++) {
-                ct1[i].xuat();
+                ct1[i].xuat11();
             }
         }
         
@@ -152,7 +152,7 @@ public class DSPhieuNhap {
             newct.nhap();
 
             DANHSACH9.themds(newct.getMaphieunhap());
-            //DANHSACH7.themds(newct.getMaphieunhap());
+            DANHSACH7.themds(newct.getManhacungcap());
             
             boolean kt = false;
 
@@ -202,7 +202,7 @@ public class DSPhieuNhap {
             for (int i = 0; i < n; i++) {
                 if (ct1[i] != null && ct1[i].getManhanvien() == maNV) {
                     System.out.println("Đã tìm thấy:");
-                    ct1[i].xuat();
+                    ct1[i].xuat11();
                     thayMaNV = true;
                     break;
                 }
@@ -223,7 +223,7 @@ public class DSPhieuNhap {
                 if (ct1[i].getMaphieunhap() == ma) {
                     System.out.println("Đã tìm thấy:");
                     thayma = true;
-                    ct1[i].xuat();
+                    ct1[i].xuat11();
                     break;
                 }
             }

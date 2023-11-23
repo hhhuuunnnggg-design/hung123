@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-import doan.DANHSACH9;
+//import doan.DANHSACH9;
 import doan_oop.Chitietphieunhap.chitiet9;
 
 
@@ -13,12 +13,12 @@ public class DSChiTietPhieuNhap {
 
 public static class DANHSACH9 {
     private static int n;
-    private static chitiet9[] ct9;
+     static chitiet9[] ct9;
     private static int max = 50;
 
     private static int tongSoLuong;
     private static float tongThanhTien;
-    private static Map<Integer, chitiet9> maCTPNMap;
+    static Map<Integer, chitiet9> maCTPNMap;
 
     static {
         n = 0;
@@ -26,16 +26,16 @@ public static class DANHSACH9 {
         maCTPNMap = new HashMap<>();
     }
 
-    public static void codecung9(chitiet9 ct2) {
+    public static void codecung9(chitiet9 ct9) {
         if (n < max) {
-            if (!kiemTraTrungMa(ct2.getMachitietphieunhap())) {
-                DANHSACH9.ct9[n] = ct2;
+            if (!kiemTraTrungMa(ct9.getMachitietphieunhap())) {
+                DANHSACH9.ct9[n] = ct9;
                 n++;
 
-                tongSoLuong += ct2.getSoluong();
-                tongThanhTien += ct2.getThanhtien();
+                tongSoLuong += ct9.getSoluong();
+                tongThanhTien += ct9.getThanhtien();
 
-                maCTPNMap.put(ct2.getMachitietphieunhap(), ct2);
+                maCTPNMap.put(ct9.getMachitietphieunhap(), ct9);
                 System.out.println("Đã thêm thành công");
             } else {
                 System.out.println("Mã chi tiết phiếu nhập đã tồn tại. Không thể thêm mới.");
@@ -45,7 +45,22 @@ public static class DANHSACH9 {
         }
     }
 
-    
+    public static void suaThongTin() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Nhập mã NCC bạn muốn sửa thông tin");
+        int maPN = sc.nextInt();
+
+        for (int i = 0; i < n; i++) {
+            if (ct9[i] != null && ct9[i].getMachitietphieunhap() == maPN) {
+                System.out.println("Nhập thông tin mới cho nhà cung cấp:");
+                ct9[i].nhap(); // Sử dụng phương thức nhap() của ct1[i] để nhập thông tin mới
+                System.out.println("Thông tin đã được cập nhật.");
+                return;
+            }
+        }
+        
+        System.out.println("Không tìm thấy nhà cung cấp có mã " + maPN);
+    }
     
     
     public static void thongKeNangCao() {

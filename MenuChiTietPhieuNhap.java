@@ -8,6 +8,8 @@ public class MenuChiTietPhieuNhap {
         menu.startMenuctpn();
     }
 
+
+    
     public static void startMenuctpn() {
         DSChiTietPhieuNhap.DANHSACH9.codecung9(new Chitietphieunhap.chitiet9(1254, 125, 5, 100, 500));
         DSChiTietPhieuNhap.DANHSACH9.codecung9(new Chitietphieunhap.chitiet9(15421, 415, 3, 125, 375));
@@ -22,6 +24,7 @@ public class MenuChiTietPhieuNhap {
             System.out.println("3. Tìm kiếm phiếu nhập chi tiết");
             System.out.println("4. Xuất danh sách phiếu nhập chi tiết ");
             System.out.println("5. Thống kê");
+            System.out.println("6. Sửa thông tin");
             System.out.println("7. Quay về màn hình chính ");
             System.out.println("0. Thoát");
             System.out.print("Chọn thao tác: ");
@@ -43,6 +46,9 @@ public class MenuChiTietPhieuNhap {
                 case 5:
                     DSChiTietPhieuNhap.DANHSACH9.thongKeNangCao();
                     break;
+                case 6:
+                	DSChiTietPhieuNhap.DANHSACH9.suaThongTin();
+                	break;
                 case 7:
                 	tong.main(null);;
                     break;
