@@ -7,9 +7,10 @@ import java.util.Scanner;
 //import doan.chitiet1;
 import doan_oop.Phieunhap.Chitiet1;
 //import doan_oop.Chitietphieunhap.chitiet9;
-
+import doan_oop.Chitietphieunhap.chitiet9;
 import doan_oop.DSChiTietPhieuNhap.DANHSACH9;
 import doan_oop.DSNhaCungCap.DANHSACH7;
+
 
 public class DSPhieuNhap {
     public static class DANHSACH1 {
@@ -65,7 +66,7 @@ public class DSPhieuNhap {
         public static void codecung1(Chitiet1 ct1) {
             boolean daCoMaTrung = false;
 
-            for (int i = 0; i < n; i++) {
+            for (int i = 0; i < n; i++) {													//Chitiet1 ct1
                 if (DANHSACH1.ct1[i]  != null && DANHSACH1.ct1[i].getMaphieunhap() == ct1.getMaphieunhap()) {
                     daCoMaTrung = true;
                     break;
@@ -73,7 +74,7 @@ public class DSPhieuNhap {
             }
 
             if (!daCoMaTrung) {
-                if (n < max) {
+                if (n < max) {			//Chitiet1 ct1
                 	DANHSACH1.ct1[n] = ct1;
                     n++;
                     System.out.println("Đã thêm thành công");
@@ -92,7 +93,7 @@ public class DSPhieuNhap {
             }
         }
         
-        public static boolean kiemTraTrungMa(int ma) {
+        /*public static boolean kiemTraTrungMa(int ma) {
             for (int i = 0; i < n; i++) {
                 if (ct1[i].getMaphieunhap() == ma) {
                     return true;
@@ -100,59 +101,17 @@ public class DSPhieuNhap {
             }
             return false;
         }
-/*
-        public static void themds1() {
-            Scanner sc = new Scanner(System.in);
-            System.out.println("=========================");
-            Phieunhap.Chitiet1 newct1 = new Phieunhap.Chitiet1();
-            newct1.nhap();
-
-            // DANHSACH9.themds(newct1.getMaphieunhap()); // Đoạn này có thể cần sửa lại
-
-            boolean kt = false;
-
-            for (int i = 0; i < n; i++) {
-                if (ct1[i].getMaphieunhap() == newct1.getMaphieunhap()) {
-                    kt = true;
-                    break;
-                }
-            }
-
-            if (!kt) {
-                ct1[n] = newct1;
-                n++;
-                System.out.println("Đã thêm thành công");
-            } else {
-                System.out.println("Mã phiếu nhập đã tồn tại");
-            }
-        }
+        */
         
         public static void themds() {
-            System.out.println("===================================");
-            System.out.println("Nhap thong tin nha cung cap: ");
-            Nhacungcap.chitiet7 newct = new Nhacungcap.chitiet7();
-            newct.nhap();
-            newct.setManhacungcap(max);
-            codecung1(newct);
-        }
-        */
-        /*public static void themds111() {
-            System.out.println("===================================");
-            System.out.println("Nhap thong tin nha cung cap: ");
-            Chitiet1 newct = new Chitiet1();
-            newct.nhap();
-            newct.setManhacungcap(max);
-            codecung1(newct);
-        }
-*/
-        public static void themds() {
             Scanner sc = new Scanner(System.in);
             System.out.println("=========================");
             Chitiet1 newct = new Chitiet1();
             newct.nhap();
 
-            DANHSACH9.themds(newct.getMaphieunhap());
             DANHSACH7.themds(newct.getManhacungcap());
+           // DANHSACH9.themds(newct.getMaphieunhap());
+            
             
             boolean kt = false;
 
@@ -194,6 +153,7 @@ public class DSPhieuNhap {
                 System.out.println("Không tìm thấy mã phiếu nhập");
             }
         }
+        
         public static void timKiemTheoMaNhanVien() {
             Scanner sc = new Scanner(System.in);
             System.out.print("Nhập mã nhân viên cần tìm kiếm: ");
@@ -249,9 +209,26 @@ public class DSPhieuNhap {
         }
         
         
-        
-        
         public static void thongKeTongTien() {
+            float sum=0;
+
+            for(chitiet9 ct : DANHSACH9.ct9) {
+            	if (ct != null) {
+            	float thanhtien=ct.getThanhtien();
+            	sum+=thanhtien;
+            	}
+            }
+
+            System.out.println("Tổng tiền của tất cả các phiếu nhập: " + sum);
+        }
+        
+        
+        
+        
+        
+        
+        
+      /*  public static void thongKeTongTien() {
             float tongTien = 0;
 
             for (int i = 0; i < n; i++) {
@@ -262,7 +239,7 @@ public class DSPhieuNhap {
 
             System.out.println("Tổng tiền của tất cả các phiếu nhập: " + tongTien);
         }
-
+/*
         public static void thongKeTheoNhanVien() {
             Scanner sc = new Scanner(System.in);
             System.out.print("Nhập mã nhân viên cần thống kê: ");
@@ -277,10 +254,11 @@ public class DSPhieuNhap {
 
             System.out.println("Tổng tiền của nhân viên có mã " + maNV + ": " + tongTienNV);
         }
+        */
         public static void thongKe() {
             System.out.println("===================================");
             System.out.println("1.Thống kê theo tổng tiền");
-            System.out.println("2.Thống kê theo nhân viên");
+            System.out.println("2.back");
             Scanner sc=new Scanner(System.in);
             int choice = sc.nextInt();
             switch (choice) {
@@ -288,7 +266,7 @@ public class DSPhieuNhap {
 				thongKeTongTien();
 				break;
 			case 2:
-				thongKeTheoNhanVien();
+				//thongKeTheoNhanVien();
 				break;
             }
             

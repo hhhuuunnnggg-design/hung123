@@ -12,6 +12,7 @@ public class MenuNhaCungCap {
 
     public static void startMenuncc() {
     	DSNhaCungCap.DANHSACH7.codecung(new Nhacungcap.chitiet7(123, "Phong Vũ", "Sài Gòn"));
+    	
     	DSNhaCungCap.DANHSACH7.codecung(new Nhacungcap.chitiet7(456, "Minh Long", "Long An"));
     	DSNhaCungCap.DANHSACH7.codecung(new Nhacungcap.chitiet7(789, "FPT", "Hà Nội"));
     	DSNhaCungCap.DANHSACH7.codecung(new Nhacungcap.chitiet7(112, "Phương Hằng", "Công Viên Thủy Tinh"));

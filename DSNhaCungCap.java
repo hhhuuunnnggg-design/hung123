@@ -3,6 +3,8 @@ package doan_oop;
 
 import java.util.Scanner;
 
+import doan_oop.Nhacungcap.chitiet7;
+
 public class DSNhaCungCap {
     public static class DANHSACH7 {
         protected static int n;
@@ -51,16 +53,65 @@ public class DSNhaCungCap {
                 ct7[i].xuat1();
             }
         }
-
+/*
         public static void themds(int manhacungcap) {
             System.out.println("===================================");
             System.out.println("Nhap thong tin nha cung cap: ");
             Nhacungcap.chitiet7 newct = new Nhacungcap.chitiet7();
-            newct.nhap();
+            newct.nhap();   
             newct.setManhacungcap(manhacungcap);
             codecung(newct);
         }
+       
+        public static void themds(int choce) {
+        	Scanner sc=new Scanner(System.in);
+        	System.out.println("========================");
+        	chitiet7 newct =new chitiet7();
+        	
+        	if(n==max) {
+        		System.out.println("Danh sách đã đầy không thể thêm mới");
+        		return;
+        	}
+        	ct7[n]=newct;
+        	n++;
+        	System.out.println("Đã thêm thành công");
+        	 
+        }
+        */
+        public static void themds(int choce) {
+            Scanner sc = new Scanner(System.in);
+            System.out.println("========================");
+            chitiet7 newct = new chitiet7();
 
+            // Kiểm tra trùng mã nhà cung cấp
+            boolean trungMa;
+            do {
+                System.out.print("Nhập mã nhà cung cấp: ");
+                int maNCC = sc.nextInt();
+                trungMa = kiemTraTrungMa(maNCC);
+                if (trungMa) {
+                    System.out.println("Mã nhà cung cấp đã tồn tại. Vui lòng nhập lại.");
+                } else {
+                    newct.setManhacungcap(maNCC);
+                }
+            } while (trungMa);
+
+            sc.nextLine(); // Đọc bỏ dòng new line
+            System.out.print("Nhập tên nhà cung cấp: ");
+            newct.setTennhacungcap(sc.nextLine());
+            System.out.print("Nhập địa chỉ: ");
+            newct.setDiachi(sc.nextLine());
+
+            if (n < max) {
+                ct7[n] = newct;
+                n++;
+                System.out.println("Đã thêm thành công!");
+            } else {
+                System.out.println("Danh sách đã đầy");
+            }
+        }
+
+        
         public static void xoads() {
             System.out.println("----------------------");
             System.out.println("1. Xóa theo mã");

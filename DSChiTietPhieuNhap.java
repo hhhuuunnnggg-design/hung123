@@ -87,32 +87,6 @@ public static class DANHSACH9 {
         return false;
     }
 
-    /*public static void themds(int maphieunhap) {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("=========================");
-        chitiet9 newct2 = new chitiet9();
-        newct2.nhap();
-        boolean kt = false;
-
-        for (int i = 0; i < n; i++) {
-            if (ct9[i].getMachitietphieunhap() == newct2.getMachitietphieunhap()) {
-                kt = true;
-                break;
-            }
-        }
-        if (!kt) {
-            ct9[n] = newct2;
-            n++;
-            tongSoLuong += newct2.getSoluong();
-            tongThanhTien += newct2.getThanhtien();
-
-            System.out.println("Đã thêm thành công");
-        } else {
-            System.out.println("Mã phiếu nhập đã tồn tại");
-        }
-    }
-*/
-    
     public static void themds(int choice) {
         Scanner sc = new Scanner(System.in);
         System.out.println("=========================");
@@ -219,14 +193,6 @@ public static class DANHSACH9 {
     }
 
 
-    /*public static void tongtien1() {
-        float tongtien = 0;
-        for (int i = 0; i < n; i++) {
-            tongtien += ct9[i].getThanhtien();
-        }
-        System.out.println(tongtien);
-    }
-    */
 }
 
 }

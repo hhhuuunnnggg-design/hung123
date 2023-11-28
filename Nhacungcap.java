@@ -2,6 +2,7 @@ package doan_oop;
 
 import java.util.Scanner;
 
+
 public class Nhacungcap {
     public static class chitiet7 {
         protected int manhacungcap;

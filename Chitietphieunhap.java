@@ -44,10 +44,10 @@ public class Chitietphieunhap {
             System.out.println("Thành tiền: " + soluong * dongia);
         }
 
-        public void xuat1() {
+        /*public void xuat1() {
             System.out.println("Mã chi tiết phiếu nhập: " + machitietphieunhap);
         }
-
+*/
         public int getMachitietphieunhap() {
             return machitietphieunhap;
         }

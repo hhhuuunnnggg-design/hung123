@@ -1,4 +1,3 @@
-
 package doan_oop;
 
 import java.text.SimpleDateFormat;
@@ -46,34 +45,12 @@ public class Phieunhap {
             String ngayNhap = sc.next();
             try {
                 ngaynhap = new SimpleDateFormat("dd/MM/yyyy").parse(ngayNhap);
+                
             } catch (Exception e) {
                 System.out.println("Lỗi định dạng ngày. Vui lòng sử dụng định dạng dd/MM/yyyy.");
             }
         }
 
-      /*  public void xuat11() {
-            System.out.println("*********************");
-            System.out.println("Mã phiếu nhập là: " + maphieunhap);
-            System.out.println("Mã nhân viên là: " + manhanvien);
-            System.out.println("Thời gian: " + ngaynhap);
-
-            float sum = 0;
-            // ct tự đặt được
-            for (chitiet9 ct : DANHSACH9.ct9) {
-                if (ct != null && ct.getMachitietphieunhap() == maphieunhap) {
-                    System.out.println("Mã chi tiết phiếu nhập: " + ct.getMachitietphieunhap());
-                    float thanhtien = ct.getThanhtien();
-                    System.out.println("Thành tiền: " + thanhtien);
-                    sum += thanhtien;
-                }
-            }
-            //System.out.println("Mã chi tiết phiếu nhập: " + ct.getMachitietphieunhap());
-            
-            System.out.println("Mã nhà cung cấp: " + manhacungcap);
-            System.out.println("Tổng thành tiền: " + sum);
-        }
-*/
-        
         
         public void xuat11() {
             System.out.println("*********************");
@@ -93,7 +70,8 @@ public class Phieunhap {
             }
 
             if (maCTPhieuNhap != -1) {
-                System.out.println("Mã chi tiết phiếu nhập: " + maCTPhieuNhap);
+            	System.out.print("");
+              //  System.out.println("Mã chi tiết phiếu nhập: " + maCTPhieuNhap);
             } else {
                 System.out.println("Không có chi tiết phiếu nhập nào cho mã phiếu nhập này.");
             }
@@ -101,6 +79,7 @@ public class Phieunhap {
             // Kiểm tra xem ct có tồn tại không trước khi sử dụng
             if (DANHSACH9.ct9 != null && DANHSACH9.ct9.length > 0 && DANHSACH9.ct9[0] != null) {
                 System.out.println("Mã nhà cung cấp: " + manhacungcap);
+            	
             } else {
                 System.out.println("Không có chi tiết phiếu nhập nào hoặc danh sách chi tiết phiếu nhập rỗng.");
             }
@@ -148,5 +127,7 @@ public class Phieunhap {
         public void setManhacungcap(int manhacungcap) {
             this.manhacungcap = manhacungcap;
         }
+
+		
     }
 }
